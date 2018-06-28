@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+	{{ block.super}}
+	- Where dreams come true (or not)
+{% endblock %}
+
+{% block content %}
+    <style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top:0px;
+}
+</style>
+
+ 	<!--<div class="jumbotron text-center vertical-align">-->
+	<div class ="jumbotron text-center vertical-align">
+        <h1> <font color="#a52a2a" <strong>The Royal Sultan السلطان الملكي</strong></font></h1>
+        <h3> <strong><font color="blue" <p id="demo"></p> ></font> </strong></h3>
+   	    <!--<p>Where dreams come true (or not) Next it'll open at <strong>{{ current_date }}</strong>
+       </p>-->
+{% if Alphad %}
+							{% for al in Alphad %}
+								<!--<li class="list-group-item">
+                                    <h3>{{ al.date }} = <strong> {{ al.charr }}</strong></h3>
+
+								</li>-->
+
+								<h2><font color="white">{{ al.date }} = <strong> {{ al.charr }}</strong></font> </h2>
+							{% endfor %}
+						{% else %}
+                            Not there
+						{% endif %}
+
+	   <!-- <p><a class="btn btn-info" role="button" href="{% url 'django.contrib.auth.views.login' %}">Login</a>
+	        <a class="btn btn-primary" role="button" href="{% url 'registration:registration' %}">Register</a></p>-->
+        </div>
+	<!--</div>-->
+
+{% endblock %}
